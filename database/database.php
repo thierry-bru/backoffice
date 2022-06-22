@@ -1,6 +1,6 @@
 <?php
 require_once './models/models.php';
-
+require_once 'UserDataBase.php';
 function pdo_connect()
 {
     $host="localhost";
@@ -15,12 +15,3 @@ function pdo_connect()
     }
 }
 
-function create ($pUser)
-{
-    $pdo = pdo_connect();
-    $sql= "INSERT INTO `.user`(`pseudo`, `email`, `password`,`isAdmin`) 
-    values ('".strip_tags($pUser->pseudo)."'
-    ,'".strip_tags($pUser->email)."','".strip_tags($pUser->password)."',0);";
-    $pdo->exec($sql);
-    echo "sql:$sql";
-}

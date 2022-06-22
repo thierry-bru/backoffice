@@ -1,5 +1,6 @@
 <?php
 require_once './controllers/controllers.php';
+$pdo = pdo_connect();
 /**
  * ROUTAGE / routing
  */
@@ -14,7 +15,7 @@ else
             # code...
             break;
         case 'register':
-            createUser();
+            createUser($pdo);
             break;
         case 'create-actu':
             break;
