@@ -14,6 +14,7 @@ else
             # code...
             break;
         case 'register':
+            createUser();
             break;
         case 'create-actu':
             break;
