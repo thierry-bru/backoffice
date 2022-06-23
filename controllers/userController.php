@@ -6,7 +6,7 @@ require_once './database/database.php';
     function createUser($pdo)
     {
         if (!isset($_POST['pseudo']))
-            require_once './../backoffice/views/users/view_form_inscription.php';
+            require_once './views/users/view_form_inscription.php';
         else
         {
           //  var_dump($_POST);
@@ -19,8 +19,25 @@ require_once './database/database.php';
         }
     }
 
-    function login()
+    function login($pdo)
     {
-        require_once './views/users/view_form_connexion.php';
+
+        if ((!isset($_POST['email'])||(!isset($_POST['password']))))
+            require_once './views/users/view_form_connexion.php';
+        else
+        {
+            $isConnected = UserDataBase::checkLogin($pdo,$_POST['email'],$_POST['password']);
+            if ($isConnected)
+            {
+                $_SESSION['isConnected']=true;
+                require_once './views/actus/view_afficher_list_actus.php';
+                ///Applications/MAMP/htdocs/backoffice/views/actus/view_afficher_list_actus.php
+            }
+            else
+            {
+                require_once './views/users/view_form_connexion.php';
+            }
+
+        }
     }
 ?>

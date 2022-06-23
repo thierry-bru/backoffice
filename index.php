@@ -1,12 +1,16 @@
 <?php
 require_once './controllers/controllers.php';
 $pdo = pdo_connect();
+session_start();
 /**
  * ROUTAGE / routing
  */
 if (!isset($_REQUEST['command']))
 {
-    login();   
+    if ($_SESSION['isConnected'])
+    afficherListeActus($pdo);
+    else
+    login($pdo);   
 }
 else
 {
