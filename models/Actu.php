@@ -1,13 +1,14 @@
 <?php
+
 class Actu
 {
     public $sujet;
     public $titre;
-    public $photo;
     public $etat;
-    public function __construct($sujet,$titre)
+    public function __construct($sujet,$titre,$etat)
     {
         $this->sujet = $sujet;
         $this->titre = $titre;
+        $this->etat = $etat;
     }
 }

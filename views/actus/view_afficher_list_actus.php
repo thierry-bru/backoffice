@@ -7,12 +7,13 @@ ob_start();
 <a href="index.php?command=create-actu">create-actu</a><br>
 
 <?php
-if ($actus && (($actus->rowCount())>0))
+if (isset($actus) && $actus && (($actus->rowCount())>0))
 {
     foreach ($actus as $actu)
     {
         ?>
-<?=$actu['text']?>
+<h2><?=$actu['titre']?></h2>
+<p><?=$actu['sujet']?></p>
 
     <?php
     }

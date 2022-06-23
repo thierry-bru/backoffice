@@ -8,7 +8,7 @@ function creerActu($pdo)
         require_once './views/actus/view_form_creation_actu.php';
         else
         {
-            $actu = new Actu($_POST['sujet'],$_POST['titre']);
+            $actu = new Actu($_POST['sujet'],$_POST['titre'],0);
             ActuDataBase::create($pdo,$actu);
             
         }

@@ -7,7 +7,7 @@ session_start();
  */
 if (!isset($_REQUEST['command']))
 {
-    if ($_SESSION['isConnected'])
+    if (isset($_SESSION['isConnected']) &&($_SESSION['isConnected']))
     afficherListeActus($pdo);
     else
     login($pdo);   
