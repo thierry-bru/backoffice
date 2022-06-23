@@ -21,6 +21,6 @@ require_once './database/database.php';
 
     function login()
     {
-        require_once './../views/users/view_form_connexion.php';
+        require_once './views/users/view_form_connexion.php';
     }
 ?>
