@@ -12,7 +12,6 @@
     <?=$css?>
 </head>
 <body>
-    
 <?=$content?>
 
 </body>

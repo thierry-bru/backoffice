@@ -2,10 +2,10 @@
 
 class ActuDataBase
 {
-    public static function create ($pdo,$pUser)
+    public static function create ($pdo,$pActu)
     {
-        $sql= "INSERT INTO `actus`(`text`) 
-        values ('".strip_tags($pUser->pseudo)."');";
+        $sql= "INSERT INTO `actus`(`sujet`,`titre`) 
+        values ('".strip_tags($pActu->sujet)."','".strip_tags($pActu->titre)."');";
         $pdo->exec($sql);
       //  echo "sql:$sql";
     }

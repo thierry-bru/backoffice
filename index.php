@@ -22,6 +22,7 @@ else
             createUser($pdo);
             break;
         case 'create-actu':
+            creerActu($pdo);
             break;
         case 'list-actus':
             break;
