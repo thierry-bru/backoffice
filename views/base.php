@@ -12,7 +12,15 @@
     <?=$css?>
 </head>
 <body>
+<?php
+if ($menu)
+    require_once './views/nav/menu_nav.php';
+?>
+<div class="container-fluid">
+    <div class="row">
 <?=$content?>
+</div>
+</div>
 
 </body>
 </html>

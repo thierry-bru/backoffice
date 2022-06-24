@@ -1,6 +1,7 @@
 <?php
 $title="Back-office Connexion";
 $css= ' <link rel="stylesheet" href="styleConnexion.css">';
+$menu= false;
 ob_start();
 ?>
 <form method="POST">

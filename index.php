@@ -1,32 +1,44 @@
 <?php
 require_once './controllers/controllers.php';
-$pdo = pdo_connect();
+
 session_start();
 /**
  * ROUTAGE / routing
  */
+//Utilisateur non connecté
+if (!isset($_SESSION['isConnected'])|| !$_SESSION['isConnected'])
+    login();
+
 if (!isset($_REQUEST['command']))
-{
-    if (isset($_SESSION['isConnected']) &&($_SESSION['isConnected']))
-    afficherListeActus($pdo);
-    else
-    login($pdo);   
+{   
+    afficherListeActus();
 }
 else
 {
     switch ($_REQUEST['command']) {
         case 'login':
-            # code...
+            if (isset($_SESSION['isConnected']) &&($_SESSION['isConnected']))
+                afficherListeActus();
+            else
+                login();   
             break;
         case 'register':
-            createUser($pdo);
+            createUser();
             break;
         case 'create-actu':
-            creerActu($pdo);
+            creerActu();
             break;
         case 'list-actus':
+            afficherListeActus();
             break;
         case 'afficher-actu':
+            afficherUneActu();
+            break;
+        case 'update-actu':
+                modifierUneActu();
+                break;
+        case 'logout':
+            logout();
             break;
         default:
             # code...

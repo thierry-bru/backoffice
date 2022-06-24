@@ -1,11 +1,13 @@
+
 <?php
-$title="Back-office Connexion";
+$title="Back-office ERROR";
 $css= ' <link rel="stylesheet" href="styleConnexion.css">';
 $menu= true;
 
 ob_start();
 ?>
-le nouvel utilisateur <?=$user->pseudo?> a été créé
+Erreur: <?=$msgErreur?>
+
 <?php
 $content= ob_get_clean();
 require_once './views/base.php';
