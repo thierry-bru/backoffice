@@ -32,7 +32,9 @@ require_once './database/database.php';
                 $_SESSION['userID']= $userConnected->getId();
                 $_SESSION['isAdmin']= $userConnected->isAdmin();
                 $_SESSION['pseudo']= $userConnected->pseudo;
-                require_once './views/actus/view_afficher_list_actus.php';
+               
+                header('location:index.php');
+            
                 ///Applications/MAMP/htdocs/backoffice/views/actus/view_afficher_list_actus.php
             }
             else

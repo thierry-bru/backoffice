@@ -11,10 +11,12 @@ function creerActu()
             $actu = new Actu($_POST['sujet'],$_POST['titre'],0);
             ActuDataBase::create($actu);
         }
+        header("location:index.php");
 }
 
 function afficherListeActus()
 {
+    var_dump($_SESSION);
     if (isset($_SESSION['isAdmin'])&&($_SESSION['isAdmin']))
         $actus = ActuDataBase::listAll();
         else

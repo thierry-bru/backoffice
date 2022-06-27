@@ -10,7 +10,7 @@ ob_start();
 <input type="hidden" name="command" value="create-actu">
   <div class="form-group">
     <label for="titre">Titre de l'actualité</label>
-    <input type="text" class="form-control" id="titre" aria-describedby="emailHelp" placeholder="Donnez un titre à l'actualité">
+    <input type="text" name="titre" class="form-control" id="titre" aria-describedby="emailHelp" placeholder="Donnez un titre à l'actualité">
     <small id="emailHelp" class="form-text text-muted">Donnez un titre explicite à cette actualité. Cela sera affiché dans la liste</small>
   </div>
   <div class="form-group">

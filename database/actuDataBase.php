@@ -28,7 +28,7 @@ class ActuDataBase
     {
         try
         {
-            $sql= "SELECT * FROM `actus`;";
+            $sql= "SELECT * FROM `actus` order by id desc;";
             $db=DataBase::getPDO()->prepare($sql);
             // les parties variables marquées par : sont remplacées grace a un tableau associatif!
             // cela protège de l'injection SQL
